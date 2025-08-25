@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SIA Typing Tutor – Fast, Clean, and Free</title>
+  <meta name="description" content="SIA Typing Tutor for Windows – improve typing speed with lessons, practice modes, and detailed reports. Download the installer (.exe) and start typing better today." />
+  <link rel="icon" href="/assets/favicon.png" />
+  <meta property="og:title" content="SIA Typing Tutor" />
+  <meta property="og:description" content="Fast, clean typing practice app for Windows. Download the installer (.exe)." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/assets/og-image.jpg" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --bg:#0b1220;/* deep navy */
+      --card:#121a2b;
+      --muted:#8aa0c2;
+      --text:#e8eefc;
+      --accent:#5eead4;/* teal */
+      --accent-strong:#2dd4bf;
+      --ring:rgba(94,234,212,.5);
+      --shadow:0 10px 25px rgba(0,0,0,.35);
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(180deg,var(--bg),#0e1628 50%,#0b1220);color:var(--text)}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;gap:10px;align-items:center}
+    .logo{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#93c5fd);display:grid;place-items:center;color:#083344;font-weight:800;box-shadow:var(--shadow)}
+    .brand-title{font-weight:800;letter-spacing:.2px}
+    .nav a{opacity:.9}
+    .nav .links{display:flex;gap:18px;align-items:center}
+    .btn{display:inline-block;padding:12px 18px;border-radius:14px;background:var(--accent);color:#052e2b;font-weight:700;box-shadow:0 8px 20px var(--ring);transition:.2s transform ease,.2s box-shadow ease}
+    .btn:hover{transform:translateY(-1px);box-shadow:0 14px 30px var(--ring)}
+    .btn.ghost{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,.12)}
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;margin-top:22px}
+    .card{background:linear-gradient(180deg,var(--card),#0e1628);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .hero .left{padding:28px}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:rgba(94,234,212,.12);color:var(--accent)}
+    h1{font-size:40px;line-height:1.1;margin:14px 0 12px}
+    .sub{color:var(--muted);font-size:16px}
+    .cta{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+    .meta{display:flex;gap:14px;align-items:center;color:var(--muted);font-size:14px;margin-top:14px}
+    .hero .right{padding:0;overflow:hidden}
+    .mock{aspect-ratio:16/10;display:grid;place-items:center;background:radial-gradient(1000px 500px at 50% -30%,rgba(94,234,212,.2),transparent),linear-gradient(180deg,#0e1524,#0b1220)}
+    .mock img{width:92%;border-radius:14px;border:1px solid rgba(255,255,255,.1);box-shadow:0 30px 60px rgba(0,0,0,.5)}
+
+    .section{margin-top:42px}
+    .section h2{margin:0 0 16px;font-size:28px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .feature{padding:18px}
+    .feature h3{margin:0 0 6px;font-size:18px}
+    .feature p{margin:0;color:var(--muted);font-size:14px}
+
+    .download{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;align-items:stretch}
+    .panel{padding:20px}
+    .panel strong{color:#cfe9ff}
+    .dl-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:10px}
+    .badge{font-size:12px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.06);color:var(--muted);display:inline-flex;gap:8px;align-items:center}
+
+    .changelog .item{padding:14px 0;border-bottom:1px dashed rgba(255,255,255,.08)}
+    .changelog .item:last-child{border-bottom:none}
+    .item small{color:var(--muted)}
+
+    .faq .q{padding:16px;border:1px solid rgba(255,255,255,.06);border-radius:14px}
+
+    .footer{margin:42px 0 12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+    @media (max-width: 920px){
+      .hero{grid-template-columns:1fr}
+      .download{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width: 640px){
+      h1{font-size:32px}
+      .grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <header class="container">
+    <nav class="nav">
+      <div class="brand">
+        <div class="logo">SIA</div>
+        <div class="brand-title">SIA Typing Tutor</div>
+      </div>
+      <div class="links">
+        <a href="#features">Features</a>
+        <a href="#download">Download</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact" class="btn ghost">Contact</a>
+        <a href="#download" class="btn" id="top-download">Download</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="left card">
+        <span class="eyebrow">New • v1.0.0</span>
+        <h1>Level up your typing speed — the clean Windows tutor.</h1>
+        <p class="sub">Practice modes, timed tests, smart accuracy tracking, and a polished UI. Built for students and creators who want fast, distraction‑free typing practice.</p>
+        <div class="cta">
+          <!-- TODO: replace href with your real .exe link -->
+          <a class="btn" href="/downloads/SIA-Typing-Tutor-Setup-v1.0.1.exe" download>Download for Windows (.exe)</a>
+          <a class="btn ghost" href="#features">See features</a>
+        </div>
+        <div class="meta">
+          <span class="badge">Windows 10/11 • 64‑bit</span>
+          <span class="badge">Size ~ 13 MB*</span>
+          <span class="badge">Free for you</span>
+        </div>
+      </div>
+      <div class="right card mock">
+        <!-- Replace with your app screenshot -->
+        <img src="/assets/screenshot-main.png" alt="screenshot" />
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="section">
+      <h2>Why SIA Typing Tutor?</h2>
+      <div class="grid">
+        <div class="card feature">
+          <h3>Multiple modes</h3>
+          <p>Lessons, custom texts, timed tests (1/3/5/10/15/20 min), and daily streaks.</p>
+        </div>
+        <div class="card feature">
+          <h3>Clean, focused UI</h3>
+          <p>No ads or clutter. Just type and improve with instant feedback.</p>
+        </div>
+        <div class="card feature">
+          <h3>Detailed analytics</h3>
+          <p>Words per minute, accuracy %, error heatmap, and progress history.</p>
+        </div>
+        <div class="card feature">
+          <h3>Hindi & English text</h3>
+          <p>Practice bilingual content with proper font rendering support.</p>
+        </div>
+        <div class="card feature">
+          <h3>Offline first</h3>
+          <p>Works fully offline after install. No Python, no terminal needed.</p>
+        </div>
+        <div class="card feature">
+          <h3>Lightweight</h3>
+          <p>Low memory footprint. Smooth on most laptops and PCs.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOWNLOAD -->
+    <section id="download" class="section download">
+      <div class="card panel">
+        <h2>Download & Install</h2>
+        <p>Click the button to get the Windows installer. If SmartScreen warns you, choose <strong>More info → Run anyway</strong> (publisher: <em>Your Name</em>). To remove this, sign the installer with a code‑signing certificate.</p>
+        <div class="dl-actions">
+          <a class="btn" href="/downloads/SIA-Typing-Tutor-Setup-v1.0.1.exe" download>Download v1.0.1 (.exe)</a>
+          <a class="btn ghost" href="/downloads/SIA-Typing-Tutor-Portable-v1.0.1.zip" download>Portable ZIP</a>
+          <span class="badge">SHA‑256: <code id="sha">—</code></span>
+          <span class="badge">Updated: <time datetime="2025-08-24">24 Aug 2025</time></span>
+        </div>
+        <ul>
+          <li>Requirements: Windows 7/10/11 (64‑bit), 4 GB RAM, 200 MB free disk.</li>
+          <li>Installer created with Inno Setup. Built from Python using PyInstaller (<code>--noconsole --onefile</code>).</li>
+        </ul>
+      </div>
+      <div class="card panel changelog">
+        <h2>Changelog</h2>
+        <div class="item">
+          <strong>v1.0.0</strong> — Initial public release.
+          <div><small>New: timed modes, Hindi texts, PDF reports, leaderboard (local).</small></div>
+        </div>
+        <div class="item">
+          <strong>Roadmap</strong>
+          <div><small>Cloud sync, online leaderboard, themes, custom lessons import.</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section faq">
+      <h2>Frequently asked questions</h2>
+      <div class="grid">
+        <div class="q">
+          <h3>App install ke baad Python ya terminal ki zarurat hai?</h3>
+          <p class="sub">Nahi. Installer ke baad app direct open hota hai jaise normal Windows software.</p>
+        </div>
+        <div class="q">
+          <h3>SmartScreen warning kyu aata hai?</h3>
+          <p class="sub">Unsigned installers par Windows pehle baar warning dikha sakta hai. <em>More info → Run anyway</em> choose karke aap install kar sakte ho.</p>
+        </div>
+        <div class="q">
+          <h3>Portable version kya hai?</h3>
+          <p class="sub">ZIP ko extract karke bina install kiye app chala sakte ho. Settings same folder me save hoti hain.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <div class="card panel">
+        <p>Questions or feedback? Email: <a href="mailto:contact@siatyping.com">contact@siatyping.com</a> • Instagram : crazyeditiz <a href="#">@crazyeditiz</a></p>
+      </div>
+    </section>
+
+    <footer class="container footer">
+      <span>© <span id="yr"></span> SIA Typing Tutor</span>
+      <div>
+        <a href="#" class="badge">Privacy</a>
+        <a href="#" class="badge">Terms</a>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Optional: compute SHA-256 of a local file (if user selects) for verification
+    // This lets you publish a checksum users can compare with a downloaded file.
+    async function sha256(arrayBuffer){
+      const hash = await crypto.subtle.digest('SHA-256', arrayBuffer);
+      const bytes = Array.from(new Uint8Array(hash));
+      return bytes.map(b=>b.toString(16).padStart(2,'0')).join('');
+    }
+    // Example usage: if you host a .sha256 file, fetch & display it here.
+    // document.getElementById('sha').textContent = 'paste‑your‑sha256‑here';
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
